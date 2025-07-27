@@ -29,7 +29,7 @@ cmake -B build -DCMAKE_BUILD_TYPE=Debug
 cmake --build build --config Debug
 
 # Copy over the built files
-cp build/libmp4decrypt.so upload/Debug
+cp build/libMp4Decrypt.so upload/Debug
 
 # Clean up before we run CMake again
 rm -rf build
@@ -41,7 +41,7 @@ cmake -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build --config Release
 
 # Copy over the built files
-cp build/libmp4decrypt.so upload/Release
+cp build/libMp4Decrypt.so upload/Release
 
 # Copy over the headers
 cp -r include/. upload/include/Mp4Decrypt
