@@ -57,6 +57,6 @@ REM Copy over the headers
 copy /y /v include upload\include\Mp4Decrypt
 
 REM Copy the Debug version of the C Runtime from VS 2022 so we can use the Debug build in VS 2017
-copy /y /v "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Redist\MSVC\14.44.35112\debug_nonredist\x64\Microsoft.VC142.DebugCRT\vcruntime140_1d.dll" upload\Debug
+copy /y /v "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Redist\MSVC\14.44.35112\debug_nonredist\x64\Microsoft.VC143.DebugCRT\vcruntime140_1d.dll" upload\Debug
 
 exit /b
