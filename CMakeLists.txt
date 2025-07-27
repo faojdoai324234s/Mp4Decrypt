@@ -20,11 +20,11 @@ add_library( ${library_name} SHARED ${SRC_FILES} )
 
 target_include_directories( ${library_name} PUBLIC ${PROJECT_SOURCE_DIR}/include )
 
-if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
+if( CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME )
     include( CTest )
 endif()
 
-if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME AND BUILD_TESTING)
+if( CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME AND BUILD_TESTING )
     add_subdirectory( tests )
 endif()
 
