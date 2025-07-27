@@ -29,7 +29,7 @@ cmake -B build -DCMAKE_BUILD_TYPE=Debug
 cmake --build build --config Debug
 
 # Run CTest and generate code coverage
-ctest -T Test -T Coverage
+ctest -T MemoryLeakTest -T Coverage
 
 # Copy over the built files
 cp build/libMp4Decrypt.so upload/Debug
