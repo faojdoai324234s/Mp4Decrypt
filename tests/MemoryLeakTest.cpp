@@ -1,13 +1,6 @@
-#include <cassert>
-
-int max(int a, int b) {
-    if (a > b) {
-        return a;
-    }
-    return b;
-}
+#include <cstdlib>
 
 int main() {
-    assert(max(1, 0) == 1);
-    assert(max(2, 0) == 1);
+    void* memory = std::malloc(4000000000);    // 4 GB
+    return memory ? 0 : 1;
 }
