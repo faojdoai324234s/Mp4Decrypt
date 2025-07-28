@@ -2,6 +2,6 @@
 
 int main() {
     DecryptionProcessor processor = DecryptionProcessor();
-    //processor.~DecryptionProcessor();
+    processor.~DecryptionProcessor();
     return 0;
 }
