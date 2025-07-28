@@ -29,11 +29,8 @@ cmake -B build -DCMAKE_BUILD_TYPE=Debug
 cmake --build build --config Debug
 
 # Run CTest and generate code coverage
-echo "Regular CTest"
-ctest
-echo "Build CTest"
 cd build
-ctest
+ctest -T coverage
 cd ..
 
 # Copy over the built files
