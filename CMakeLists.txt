@@ -25,7 +25,6 @@ if( CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME AND CMAKE_BUILD_TYPE STREQUAL "Debu
 endif()
 
 if( CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME AND BUILD_TESTING )
-    #add_subdirectory( tests )
     add_executable( MemoryLeakTest tests/MemoryLeakTest.cpp )
     target_link_libraries (MemoryLeakTest PRIVATE ${library_name} )
     add_test( MemoryLeakTest MemoryLeakTest )
