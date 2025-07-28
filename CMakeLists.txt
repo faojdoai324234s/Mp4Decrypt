@@ -9,8 +9,8 @@ if( CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME )
 endif()
 
 if( CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME AND BUILD_TESTING )
-    #add_subdirectory( tests )
-    add_subdirectory( ./tests )
+    add_subdirectory( tests )
+    #add_subdirectory( ./tests )
 endif()
 
 set( CMAKE_INCLUDE_CURRENT_DIR ON )
