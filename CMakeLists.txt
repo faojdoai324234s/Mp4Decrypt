@@ -10,6 +10,16 @@ set( CMAKE_CXX_STANDARD_REQUIRED ON )
 set( CMAKE_CXX_EXTENSIONS OFF )
 set( CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS True )
 
+include_directories( include )
+
+file( GLOB SRC_FILES ${PROJECT_SOURCE_DIR}/src/*.cpp ${PROJECT_SOURCE_DIR}/src/*.h )
+
+set_property( DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT ${library_name} )
+
+add_library( ${library_name} SHARED ${SRC_FILES} )
+
+target_include_directories( ${library_name} PUBLIC ${PROJECT_SOURCE_DIR}/include )
+
 if( CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME AND CMAKE_BUILD_TYPE STREQUAL "Debug" )
     include( CTest )
 endif()
@@ -20,13 +30,3 @@ if( CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME AND BUILD_TESTING )
     target_link_libraries (MemoryLeakTest PRIVATE ${library_name} )
     add_test( MemoryLeakTest MemoryLeakTest )
 endif()
-
-include_directories( include )
-
-file( GLOB SRC_FILES ${PROJECT_SOURCE_DIR}/src/*.cpp ${PROJECT_SOURCE_DIR}/src/*.h )
-
-set_property( DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT ${library_name} )
-
-add_library( ${library_name} SHARED ${SRC_FILES} )
-
-target_include_directories( ${library_name} PUBLIC ${PROJECT_SOURCE_DIR}/include )
