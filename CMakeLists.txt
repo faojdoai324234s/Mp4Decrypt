@@ -4,6 +4,12 @@ set( library_name Mp4Decrypt )
 
 project( ${library_name} CXX )
 
+set( CMAKE_INCLUDE_CURRENT_DIR ON )
+set( CMAKE_CXX_STANDARD 17 )
+set( CMAKE_CXX_STANDARD_REQUIRED ON )
+set( CMAKE_CXX_EXTENSIONS OFF )
+set( CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS True )
+
 if( CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME AND CMAKE_BUILD_TYPE STREQUAL "Debug" )
     include( CTest )
 endif()
@@ -14,12 +20,6 @@ if( CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME AND BUILD_TESTING )
     target_link_libraries (MemoryLeakTest PRIVATE ${library_name} )
     add_test( MemoryLeakTest MemoryLeakTest )
 endif()
-
-set( CMAKE_INCLUDE_CURRENT_DIR ON )
-set( CMAKE_CXX_STANDARD 17 )
-set( CMAKE_CXX_STANDARD_REQUIRED ON )
-set( CMAKE_CXX_EXTENSIONS OFF )
-set( CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS True )
 
 include_directories( include )
 
