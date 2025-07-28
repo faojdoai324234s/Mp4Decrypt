@@ -4,13 +4,12 @@ set( library_name Mp4Decrypt )
 
 project( ${library_name} CXX )
 
-if( CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME )
+if( CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME AND CMAKE_BUILD_TYPE STREQUAL "Debug" )
     include( CTest )
 endif()
 
 if( CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME AND BUILD_TESTING )
     add_subdirectory( tests )
-    #add_subdirectory( ./tests )
 endif()
 
 set( CMAKE_INCLUDE_CURRENT_DIR ON )
