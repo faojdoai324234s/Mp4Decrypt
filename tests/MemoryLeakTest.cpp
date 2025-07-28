@@ -2,7 +2,7 @@
 #include "decryption_processor.h"
 
 int main() {
-    std::ifstream videoFile("video.mp4", ios::binary);
+    std::ifstream videoFile("video.mp4", std::ios::binary);
     if(videoFile) {
       return 0;
     } else {
