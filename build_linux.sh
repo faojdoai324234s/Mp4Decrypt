@@ -28,7 +28,7 @@ cmake -B build -DCMAKE_BUILD_TYPE=Debug
 # Build CMake for Debug build
 cmake --build build --config Debug
 
-# Run CTest and generate code coverage
+# Run CTest
 cd build
 ctest -T test
 cd ..
