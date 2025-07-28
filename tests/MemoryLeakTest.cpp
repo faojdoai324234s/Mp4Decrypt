@@ -1,6 +1,6 @@
 #include <cstdlib>
 
 int main() {
-    void* memory = std::malloc(4000000000);    // 4 GB
+    void* memory = std::malloc(8000000000);    // 8 GB
     return memory ? 0 : 1;
 }
