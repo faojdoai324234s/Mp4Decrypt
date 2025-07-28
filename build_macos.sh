@@ -28,6 +28,11 @@ cmake -B build -DCMAKE_BUILD_TYPE=Debug
 # Build CMake for Debug build
 cmake --build build --config Debug
 
+# Run CTest
+cd build
+ctest -T test
+cd ..
+
 # Copy over the built files
 cp build/libmp4decrypt.dylib upload/Debug
 
