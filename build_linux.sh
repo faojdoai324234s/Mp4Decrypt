@@ -30,7 +30,7 @@ cmake --build build --config Debug
 
 # Run CTest and generate code coverage
 cd build
-ctest -T coverage
+ctest -T test -T coverage
 cd ..
 
 # Copy over the built files
