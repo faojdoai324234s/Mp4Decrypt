@@ -43,7 +43,7 @@ cd ..
 REM Copy over the built files
 copy /y /v build\Debug\*.dll upload\Debug
 copy /y /v build\Debug\mp4decrypt.lib upload\Debug\mp4decrypt_debug.lib
-copy /y /v build\Debug\*.pdb upload\Debug
+copy /y /v build\Debug\mp4decrypt.pdb upload\Debug
 
 REM Clean up before we run CMake again
 rmdir /s /q build
