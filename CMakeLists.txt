@@ -4,6 +4,14 @@ set( library_name Mp4Decrypt )
 
 project( ${library_name} CXX )
 
+if( CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME )
+    include( CTest )
+endif()
+
+if( CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME AND BUILD_TESTING )
+    add_subdirectory( tests )
+endif()
+
 set( CMAKE_INCLUDE_CURRENT_DIR ON )
 set( CMAKE_CXX_STANDARD 17 )
 set( CMAKE_CXX_STANDARD_REQUIRED ON )
@@ -19,13 +27,3 @@ set_property( DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT 
 add_library( ${library_name} SHARED ${SRC_FILES} )
 
 target_include_directories( ${library_name} PUBLIC ${PROJECT_SOURCE_DIR}/include )
-
-if( CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME )
-    include( CTest )
-endif()
-
-if( CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME AND BUILD_TESTING )
-    add_subdirectory( tests )
-endif()
-
-add_test( TestMemoryLeak MemoryLeakTest )
