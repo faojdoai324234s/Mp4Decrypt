@@ -6,7 +6,7 @@ int main() {
     if(!videoFile) {
       return 1;
     }
-    const std::size_t size = videoFile.rdbuf()->pubseekoff(0,videoFile.end, videoFile.in);
+    const std::size_t size = videoFile.rdbuf()->pubseekoff(0, videoFile.end, videoFile.in);
 
     DecryptionProcessor processor = DecryptionProcessor();
     
