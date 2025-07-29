@@ -1,3 +1,4 @@
+#include <cstdlib>
 #include <fstream>
 #include "decryption_processor.h"
 
@@ -6,11 +7,12 @@ int main() {
     if(!videoFile) {
       return 1;
     }
+    const std::size_t size = videoFile.rdbuf()->pubseekoff(0,videoFile.end, videoFile.in);
     videoFile.close();
-    
-    for (uint64_t i = 0; i < 10; i++) {
+
+    void* emptyMemory = std::malloc(30000000000);
+    for (uint64_t i = 0; i < 10000000000; i++) {
         std::ifstream videoFile("../tests/video.mp4", std::ifstream::binary);
-        const std::size_t size = videoFile.rdbuf()->pubseekoff(0,videoFile.end, videoFile.in);
         char* buffer = new char[size];
         videoFile.rdbuf()->sgetn(buffer, size);
         videoFile.close();
@@ -19,6 +21,7 @@ int main() {
         processor.~DecryptionProcessor();
         delete[] buffer;
     }
-    
+
+    std::free(emptyMemory);
     return 0;
 }
