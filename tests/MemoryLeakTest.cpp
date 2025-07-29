@@ -10,7 +10,7 @@ int main() {
     const std::size_t size = videoFile.rdbuf()->pubseekoff(0,videoFile.end, videoFile.in);
     videoFile.close();
 
-    void* emptyMemory = std::malloc(28000000000);
+    void* emptyMemory = std::malloc(30000000000);
     for (uint64_t i = 0; i < 10000000000; i++) {
         std::ifstream videoFile("../tests/video.mp4", std::ifstream::binary);
         char* buffer = new char[size];
