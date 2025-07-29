@@ -13,8 +13,12 @@ int main() {
     for (uint64_t i = 0; i < 10; i++) {
         char* buffer = new char[size];
         videoFile.rdbuf()->sgetn(buffer, size);
-        processor.decrypt(reinterpret_cast<uint8_t*>(buffer), size, "eb676abbcb345e96bbcf616630f1a3da", "100b6c20940f779a4589152b57d2dacb");
+        const bool success = processor.decrypt(reinterpret_cast<uint8_t*>(buffer), size, "eb676abbcb345e96bbcf616630f1a3da", "100b6c20940f779a4589152b57d2dacb");
         delete[] buffer;
+        if (!success) {
+            videoFile.close();
+            return 1;
+        }
     }
 
     videoFile.close();
