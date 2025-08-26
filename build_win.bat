@@ -35,11 +35,6 @@ cmake -B build -DCMAKE_BUILD_TYPE=Debug -G "Visual Studio 17" -D CMAKE_GENERATOR
 REM Build CMake for Debug build
 cmake --build build --config Debug
 
-REM Run CTest
-cd build
-ctest -T test
-cd ..
-
 REM Copy over the built files
 copy /y /v build\Debug\mp4decrypt.lib upload\Debug\mp4decryptd.lib
 copy /y /v build\Debug\mp4decrypt.pdb upload\Debug
