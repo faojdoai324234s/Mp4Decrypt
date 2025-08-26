@@ -2138,16 +2138,7 @@ AP4_AesBlockCipher::Create(const AP4_UI08*      key,
             if (ctr_params) {
                 counter_size = ctr_params->counter_size;
             }
-#ifdef AP4_ENABLE_AESNI
-            if (g_SupportAesNI && (counter_size == 8)) {
-              cipher = new AP4_AesNICtrBlockCipher(direction, counter_size, context);
-            }
-            else {
-#endif
-              cipher = new AP4_AesCtrBlockCipher(direction, counter_size, context);
-#ifdef AP4_ENABLE_AESNI
-            }
-#endif
+            cipher = new AP4_AesNICtrBlockCipher(direction, counter_size, context);
             break;
         }
             
